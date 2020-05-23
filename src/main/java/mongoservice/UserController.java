@@ -9,6 +9,11 @@ public class UserController {
     @Autowired
     private UserRepository repository;
 
+    @GetMapping("/foo")
+    public String test() {
+        return "bar";
+    }
+
     @GetMapping("/user/{number}")
     public User getUser(@PathVariable String number) {
         return repository.findByNumber(number);
